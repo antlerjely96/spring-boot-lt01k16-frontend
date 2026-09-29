@@ -11,7 +11,20 @@ const BrandList = () => {
 
     //Gọi API ngay khi component đuợc chạy lần đầu
     useEffect(() => {
-        fetch('http://localhost:8080/brands')
+        //Lấy token
+        const token = localStorage.getItem('token');
+        // Cấu hình headers
+        const headers = {
+            'Content-Type': 'application/json',
+        };
+
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+        }
+        fetch('http://localhost:8080/brands', {
+            method: 'GET',
+            headers: headers
+        })
             .then(respone => respone.json())
             .then(data => {
                 setBrands(data);
