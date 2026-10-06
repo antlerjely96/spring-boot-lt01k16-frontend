@@ -26,7 +26,7 @@ const AddBrandForm = () => {
         const token = localStorage.getItem('token');
 
         if(token){
-            headers['Authorization'] = `Bearer {token}`;
+            headers['Authorization'] = `Bearer ${token}`;
         }
 
         //Gọi API lưu
