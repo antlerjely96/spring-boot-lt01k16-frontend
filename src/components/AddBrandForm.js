@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AddBrandForm = () => {
     //Biến nhận name từ form
-    const [name, setName] = useState();
+    const [name, setName] = useState("");
     const navigate = useNavigate('');
 
     const handleSubmit = (e) =>{
